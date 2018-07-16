@@ -2,7 +2,7 @@
 session_start();
 $result = '';
 $url = 'https://api.rapidsdk.com/v1/data/delete';
-$data = array('session_id' => $_SESSION['session_id'], 'data' => array($_POST['key']);
+$data = array('session_id' => $_SESSION['session_id'], 'data' => array($_POST['key']));
 
 $data = json_encode($data);
 
