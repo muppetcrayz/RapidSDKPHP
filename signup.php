@@ -7,7 +7,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['ema
   'email' => $_POST['email'], 'password' => $_POST['password']);
 
   $ch = curl_init();
-  $headers[] = "Authorization: Basic " . $token;
+  $headers[] = "Authorization: Basic " . $_SESSION['token'];
 
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_HTTPHEADER,  $headers);
