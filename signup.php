@@ -1,4 +1,5 @@
 <?php
+session_start();
 $result = '';
 $url = 'https://api.rapidsdk.com/v1/register';
 
