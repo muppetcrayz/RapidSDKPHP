@@ -3,6 +3,13 @@ session_start();
 $result = '';
 $url = 'https://api.rapidsdk.com/v1/register';
 
+$apiKey = "4abc7598e1f28e394d57f50396c92a160671b575776ed10d885281eb94db7259";
+$apiSecret = "eb1f101fe943b41526ae1c5e54089834badbab836e87f73ee1b6047e30a41c68";
+$tokenstr = $apiKey . ":" . $apiSecret;
+$token = base64_encode($tokenstr);
+
+$_SESSION['token'] = $token;
+
 if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password'])) {
   $data = array('firstname' => $_POST['firstname'], 'lastname' => $_POST['lastname'],
   'email' => $_POST['email'], 'password' => $_POST['password']);
