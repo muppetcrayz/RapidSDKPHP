@@ -15,5 +15,6 @@ Firstly, you must change the `token` located in the `login.php` file to be your 
 
 ## Authors
 * Sage Conger - [sagealessandra](https://github.com/sagealessandra)
+* John Opoku - [johnopoku](https://github.com/johnopoku)
 
 Powered by Dubtel Consulting, LLC.
