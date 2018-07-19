@@ -4,6 +4,8 @@ $result = '';
 $url = 'https://api.rapidsdk.com/v1/data/create';
 $data = array('session_id' => $_SESSION['session_id'], 'data' => array($_POST['key'] => $_POST['value']));
 
+$data = json_encode($data);
+
 $ch = curl_init();
 $headers[] = "Authorization: Basic " . $_SESSION['token'];
 
