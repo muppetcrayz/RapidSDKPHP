@@ -2,8 +2,13 @@
 session_start();
 $result = '';
 $url = 'https://api.rapidsdk.com/v1/data/update';
-$data = array('session_id' => $_SESSION['session_id'], 'data' => array($_POST['key'] => $_POST['value']));
-
+$value = json_decode($value);
+if (json_last_error() == NONE) {
+  $data = array('session_id' => $_SESSION['session_id'], 'data' => array($_POST['key'] => $value));
+}
+else {
+  $data = array('session_id' => $_SESSION['session_id'], 'data' => array($_POST['key'] => $_POST['value']));
+}
 $data = json_encode($data);
 
 $ch = curl_init();
