@@ -2,7 +2,7 @@
 session_start();
 $result = '';
 $url = 'https://api.rapidsdk.com/v1/data/read';
-$data = array('session_id' => $_SESSION['session_id'], 'data' => array($_POST['key']));
+$data = array('session_id' => $_SESSION['session_id'], 'data' => json_decode($_POST['data']));
 
 $data = json_encode($data);
 
@@ -16,15 +16,6 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$content = json_decode(curl_exec($ch), true);
-
-print_r(json_encode($content));
-
-// if ($content['status'] == "Success") {
-//   print_r($content);
-// }
-// else {
-//   print_r("Could not read data.");
-// }
+print_r(curl_exec($ch));
 
 ?>
