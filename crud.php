@@ -9,7 +9,7 @@
     $username = "beep@beep.com";
     $password = "beep";
 
-    $data = array('username' => $username, 'password' => $password);
+    $data = array('email' => $username, 'password' => $password);
     $url = 'https://api.rapidsdk.com/v1/login';
 
     $ch = curl_init();
